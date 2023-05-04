@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 if (!MONGO_DB_URL) {
-    throw new Error("Please provide mongo db connection url.");
+    throw new Error("Please provide mongo db connection url. Check ReadMe.md for information.");
 }
 
 mongoose
@@ -29,5 +29,5 @@ mongoose
         serverSelectionTimeoutMS: 5000,
         family: 4,
     })
-    .then(() => app.listen(PORT, () => console.log(`Listening on Port: http://localhost:${PORT}`)))
+    .then(() => app.listen(PORT, () => console.log(`Listening on Port: ${PORT}`)))
     .catch((error) => console.log(`${error} did not connect.`));

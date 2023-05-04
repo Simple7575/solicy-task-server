@@ -6,9 +6,9 @@ export const getAccounts = async (req: Request, res: Response) => {
         const accounts = await Account.find({});
 
         if (!accounts.length) {
-            res.status(200).send("There is no accounts yet.");
+            res.status(404).send("There is no accounts yet.");
         } else {
-            res.status(200).json(accounts);
+            res.status(200).json(JSON.stringify(accounts));
         }
     } catch (error) {
         if (error instanceof Error) {
@@ -26,7 +26,7 @@ export const getAccount = async (req: Request<{ id: string }>, res: Response) =>
         if (!account) {
             res.status(404).send("Account with this ID is not found.");
         } else {
-            res.status(200).json(account);
+            res.status(200).json(JSON.stringify(account));
         }
     } catch (error) {
         if (error instanceof Error) {
