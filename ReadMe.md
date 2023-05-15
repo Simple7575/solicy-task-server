@@ -1,3 +1,3 @@
-## Create .env file and replace example.env file with it. Copy content from example.env to .env file. I will make test mongoDB url and will keep it alive for a week, for you to test my application.
+## In order to test this app you need to create mongoDB atlas create connection and replace url in example.env with your url.
 
 ## Good Luck!
